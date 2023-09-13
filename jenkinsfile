@@ -1,6 +1,11 @@
 pipeline {
     agent any ;
     stages {
+        stage('Debug') {
+            steps {
+                echo 'Teste'
+            }
+        }
         stage('Build') {
             steps {
                 podman build -t "almalinux:${TAG_NAME}" .
